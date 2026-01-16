@@ -40,5 +40,10 @@ describe("Vérification d'adresse d'email", () => {
 
       expect(actual).toBe(false);
     });
+	    it("should return false when given selin@", () => {
+      let actual = email.validEmail("selin@");
+
+      expect(actual).toBe(false);
+    });
   });
 });
