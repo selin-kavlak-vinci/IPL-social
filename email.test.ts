@@ -14,6 +14,11 @@ describe("Vérification d'adresse d'email", () => {
 
       expect(actual).toBe(true);
     });
+    it("should return false when given selin.com", () => {
+      let actual = email.validEmail("selin.com");
+
+      expect(actual).toBe(false);
+    });
   });
   describe("Test of .", () => {
     it("should return true when given a@b.com", () => {
@@ -34,13 +39,13 @@ describe("Vérification d'adresse d'email", () => {
       expect(actual).toBe(false);
     });
   });
-    describe("It has to be text before and after the @", () => {
+  describe("It has to be text before and after the @", () => {
     it("should return false when given @gmail.com", () => {
       let actual = email.validEmail("@gmail.com");
 
       expect(actual).toBe(false);
     });
-	    it("should return false when given selin@", () => {
+    it("should return false when given selin@", () => {
       let actual = email.validEmail("selin@");
 
       expect(actual).toBe(false);
