@@ -28,10 +28,10 @@ describe("Vérification d'adresse d'email", () => {
     });
   });
   describe("Testing if there is no spaces", () => {
-	it ("should return false when given selin@gm ail.com", () => {
-		let actual = email.validEmail("selin@gm ail.com");
-		
-		expect(actual).toBe(false);
-	})
-  })
+    it("should return false when given selin@gm ail.com", () => {
+      let actual = email.validEmail("selin@gm ail.com");
+
+      expect(actual).toBe(false);
+    });
+  });
 });
