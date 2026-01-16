@@ -5,7 +5,7 @@ describe("Vérification d'adresse d'email", () => {
   describe("Test of @", () => {
     it("should return true when given a@.be", () => {
       //Act
-      let actual = email.validEmail("a@.be"); //On le modifie pour qu'il passe les nouveaux tests (encore)
+      let actual = email.validEmail("a@.be");
       //Assert
       expect(actual).toBe(true);
     });
