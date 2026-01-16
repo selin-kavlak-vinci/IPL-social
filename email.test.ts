@@ -2,7 +2,7 @@ import { Email } from "./email";
 
 describe("Vérification d'adresse d'email", () => {
   let email = new Email();
-  describe("Test du @", () => {
+  describe("Test of @", () => {
     it("should return true when given @.be", () => {
       //Act
       let actual = email.validEmail("@.be"); //On le modifie pour qu'il passe les nouveaux tests
@@ -15,7 +15,7 @@ describe("Vérification d'adresse d'email", () => {
       expect(actual).toBe(true);
     });
   });
-  describe("Test du .", () => {
+  describe("Test of .", () => {
     it("should return true when given a@b.com", () => {
       let actual = email.validEmail("a@b.com");
 
@@ -27,4 +27,11 @@ describe("Vérification d'adresse d'email", () => {
       expect(actual).toBe(false);
     });
   });
+  describe("Testing if there is no spaces", () => {
+	it ("should return false when given selin@gm ail.com", () => {
+		let actual = email.validEmail("selin@gm ail.com");
+		
+		expect(actual).toBe(false);
+	})
+  })
 });
