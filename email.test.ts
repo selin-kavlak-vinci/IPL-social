@@ -3,9 +3,9 @@ import { Email } from "./email";
 describe("Vérification d'adresse d'email", () => {
   let email = new Email();
   describe("Test of @", () => {
-    it("should return true when given @.be", () => {
+    it("should return true when given a@.be", () => {
       //Act
-      let actual = email.validEmail("@.be"); //On le modifie pour qu'il passe les nouveaux tests
+      let actual = email.validEmail("a@.be"); //On le modifie pour qu'il passe les nouveaux tests (encore)
       //Assert
       expect(actual).toBe(true);
     });
@@ -30,6 +30,13 @@ describe("Vérification d'adresse d'email", () => {
   describe("Testing if there is no spaces", () => {
     it("should return false when given selin@gm ail.com", () => {
       let actual = email.validEmail("selin@gm ail.com");
+
+      expect(actual).toBe(false);
+    });
+  });
+    describe("It has to be text before and after the @", () => {
+    it("should return false when given @gmail.com", () => {
+      let actual = email.validEmail("@gmail.com");
 
       expect(actual).toBe(false);
     });
